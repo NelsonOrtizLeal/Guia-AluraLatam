@@ -1,6 +1,7 @@
 // Variables
 let numeroSecreto = 6;
 let numeroUsuario = 0;
+let intentos = 1;
 
 console.log(numeroUsuario);
 
@@ -13,13 +14,17 @@ while (numeroUsuario != numeroSecreto) {
 
   if (numeroUsuario == numeroSecreto) {
     //Acertamos, fue verdadero la condición
-    alert(`Acertaste, el número es: ${numeroUsuario}`);
+    alert(`Acertaste, el número es: ${numeroUsuario}. Lo hiciste en ${intentos} veces.`);
   } else {
     if (numeroUsuario > numeroSecreto) {
       alert("El numero secreto es menor");
     } else {
       alert("El numero secreto es mayor");
     }
+
+    //Aumenta el numero de intentos a 1, por haber fallado
+    intentos++;
+
     //La condición no se cumplio
     alert("Lo siento, no acertaste el numero.");
   }
