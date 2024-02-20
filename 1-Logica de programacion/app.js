@@ -1,5 +1,6 @@
 // Variables
-let numeroSecreto = Math.floor(Math.random() * 10) + 1;
+let limite = parseInt(prompt("Indicame el limite del rango de numeros"));
+let numeroSecreto = Math.floor(Math.random() * limite) + 1;
 let numeroUsuario = 0;
 let intentos = 1;
 // let palabraVeces = "vez";
@@ -12,7 +13,7 @@ Este código realiza
 la comparación
 */
 while (numeroUsuario != numeroSecreto) {
-  numeroUsuario = parseInt(prompt("Me indicas un número por favor:"));
+  numeroUsuario = parseInt(prompt(`Adivina el numero entre 1 y ${limite}`));
 
   if (numeroUsuario === numeroSecreto) {
     //Acertamos, fue verdadero la condición
