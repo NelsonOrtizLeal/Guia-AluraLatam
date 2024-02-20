@@ -3,6 +3,7 @@ let numeroSecreto = 6;
 let numeroUsuario = 0;
 let intentos = 1;
 let palabraVeces = "vez";
+let maximoIntentos = 3;
 
 console.log(numeroUsuario);
 
@@ -15,7 +16,11 @@ while (numeroUsuario != numeroSecreto) {
 
   if (numeroUsuario == numeroSecreto) {
     //Acertamos, fue verdadero la condición
-    alert(`Acertaste, el número es: ${numeroUsuario}. Lo hiciste en ${intentos} ${palabraVeces}.`);
+    alert(
+      `Acertaste, el número es: ${numeroUsuario}. Lo hiciste en ${intentos} ${
+        intentos == 1 ? palabraVeces : "veces"
+      }.`
+    );
   } else {
     if (numeroUsuario > numeroSecreto) {
       alert("El numero secreto es menor");
@@ -25,10 +30,10 @@ while (numeroUsuario != numeroSecreto) {
 
     //Aumenta el numero de intentos a 1, por haber fallado
     intentos++;
-    palabraVeces = "veces";
+    // palabraVeces = "veces";
 
-    if(intentos > 3){
-      alert("Llegaste a el numero maximo de intentos");
+    if (intentos > maximoIntentos) {
+      alert(`Llegaste a el numero maximo ${maximoIntentos} intentos`);
       break;
     }
 
