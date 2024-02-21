@@ -1,13 +1,16 @@
 //Seleccionando el objeto h1 del objeto DOM
-let titulo = document.querySelector('h1');
-//titulo.innerHTML = "Juego del numero secreto";
-titulo.innerHTML = "Hora del Desafío";
+function asignarTextoElemento(elemento, text){
+    let elementoHTML = document.querySelector(elemento);
+    elementoHTML.innerHTML = text;
+}
 
+asignarTextoElemento('h1', "Juego del número secreto!");
+asignarTextoElemento('p', "Indica un número del 1 al 10");
 
-let parrafo = document.querySelector('p');
-parrafo.innerHTML = "Indica un numero del 1 al 10";
-
+// Desafio
 // Control de eventos
+
+// asignarTextoElemento('h1', "Hora del Desafío.");
 function intentoDeUsuario(){
     alert("Has hecho click");
 }
