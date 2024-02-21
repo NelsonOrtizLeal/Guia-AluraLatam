@@ -1,4 +1,7 @@
-//Seleccionando el objeto h1 del objeto DOM
+let numeroAleatorio = generarNumeroAleatorio();
+
+console.log(numeroAleatorio);
+
 function asignarTextoElemento(elemento, text){
     let elementoHTML = document.querySelector(elemento);
     elementoHTML.innerHTML = text;
@@ -6,6 +9,11 @@ function asignarTextoElemento(elemento, text){
 
 asignarTextoElemento('h1', "Juego del número secreto!");
 asignarTextoElemento('p', "Indica un número del 1 al 10");
+
+function generarNumeroAleatorio(){
+    return Math.floor(Math.random() * 10) + 1;
+}
+
 
 // Desafio
 // Control de eventos
