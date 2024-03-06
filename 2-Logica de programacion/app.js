@@ -1,5 +1,7 @@
 let numeroAleatorio = 0;
 let intentos = 0;
+let listaNumerosSorteados = [];
+let numerosMaximo = 10;
 
 function asignarTextoElemento(elemento, text) {
   let elementoHTML = document.querySelector(elemento);
@@ -7,9 +9,22 @@ function asignarTextoElemento(elemento, text) {
 }
 
 function generarNumeroAleatorio() {
-  let numeroAleatorio = Math.floor(Math.random() * 10) + 1;
+  let numeroAleatorio = Math.floor(Math.random() * numerosMaximo) + 1;
   console.log(numeroAleatorio);
-  return numeroAleatorio;
+  console.log(listaNumerosSorteados);
+
+  //Agregando caso base de la recursividad para que se salga y termine el juego
+  if (listaNumerosSorteados.length === numerosMaximo) {
+    asignarTextoElemento("p", "Ya se sortearon todos los números posibles");
+  } else {
+    //Agregamos recursivadad a la función, ya que solo queremos numeros que no se repitan
+    if (listaNumerosSorteados.includes(numeroAleatorio)) {
+      return generarNumeroAleatorio();
+    } else {
+      listaNumerosSorteados.push(numeroAleatorio);
+      return numeroAleatorio;
+    }
+  }
 }
 
 function verificarNumero() {
@@ -41,7 +56,7 @@ function limpiarCaja() {
 
 function iniciarValores() {
   asignarTextoElemento("h1", "Juego del número secreto!");
-  asignarTextoElemento("p", "Indica un número del 1 al 10");
+  asignarTextoElemento("p", `Indica un número del 1 al ${numerosMaximo}`);
   numeroAleatorio = generarNumeroAleatorio();
   intentos = 1;
 }
